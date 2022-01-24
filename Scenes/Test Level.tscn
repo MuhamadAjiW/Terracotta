@@ -8,35 +8,35 @@
 [ext_resource path="res://Graphics/Background.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Basic Lighting.tscn" type="PackedScene" id=7]
 
-[sub_resource type="CanvasItemMaterial" id=9]
+[sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 2
 
-[sub_resource type="CanvasItemMaterial" id=10]
+[sub_resource type="CanvasItemMaterial" id=2]
 light_mode = 2
 
-[sub_resource type="CanvasItemMaterial" id=11]
+[sub_resource type="CanvasItemMaterial" id=3]
 light_mode = 2
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 720, 31.793 )
 
-[sub_resource type="OccluderPolygon2D" id=18]
+[sub_resource type="OccluderPolygon2D" id=5]
 cull_mode = 1
 polygon = PoolVector2Array( -720, -32, -720, 32, 720, 32, 720, -32 )
 
-[sub_resource type="CanvasItemMaterial" id=13]
+[sub_resource type="CanvasItemMaterial" id=6]
 light_mode = 2
 
-[sub_resource type="OccluderPolygon2D" id=19]
+[sub_resource type="OccluderPolygon2D" id=7]
 polygon = PoolVector2Array( 720, -32, 720, 32, -720, 32, -720, -32 )
 
-[sub_resource type="CanvasItemMaterial" id=15]
+[sub_resource type="CanvasItemMaterial" id=8]
 light_mode = 2
 
-[sub_resource type="OccluderPolygon2D" id=20]
+[sub_resource type="OccluderPolygon2D" id=9]
 polygon = PoolVector2Array( -720, -32, -720, 32, 719, 32, 719, -32 )
 
-[sub_resource type="CanvasItemMaterial" id=17]
+[sub_resource type="CanvasItemMaterial" id=10]
 light_mode = 2
 
 [node name="Test Level" type="Node2D"]
@@ -44,19 +44,19 @@ pause_mode = 1
 script = ExtResource( 4 )
 
 [node name="Background" type="Sprite" parent="."]
-material = SubResource( 9 )
+material = SubResource( 1 )
 position = Vector2( -4688, -3874.55 )
 scale = Vector2( 200, 200 )
 texture = ExtResource( 6 )
 offset = Vector2( 684, 384 )
 
 [node name="TestPassage" parent="." instance=ExtResource( 3 )]
-material = SubResource( 10 )
+material = SubResource( 2 )
 position = Vector2( 1248, 664 )
 path = "res://Scenes/Test Level2.tscn"
 
 [node name="Environment" type="StaticBody2D" parent="."]
-material = SubResource( 11 )
+material = SubResource( 3 )
 position = Vector2( 712, 736 )
 
 [node name="Sprite" type="Sprite" parent="Environment"]
@@ -66,13 +66,13 @@ scale = Vector2( 22.3757, 1 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment"]
-shape = SubResource( 12 )
+shape = SubResource( 4 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Environment"]
-occluder = SubResource( 18 )
+occluder = SubResource( 5 )
 
 [node name="Environment2" type="StaticBody2D" parent="."]
-material = SubResource( 13 )
+material = SubResource( 6 )
 position = Vector2( 0, 608 )
 
 [node name="Sprite" type="Sprite" parent="Environment2"]
@@ -82,13 +82,13 @@ scale = Vector2( 22.3757, 1 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment2"]
-shape = SubResource( 12 )
+shape = SubResource( 4 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Environment2"]
-occluder = SubResource( 19 )
+occluder = SubResource( 7 )
 
 [node name="Environment3" type="StaticBody2D" parent="."]
-material = SubResource( 15 )
+material = SubResource( 8 )
 position = Vector2( 2016, 584 )
 
 [node name="Sprite" type="Sprite" parent="Environment3"]
@@ -98,15 +98,15 @@ scale = Vector2( 22.3757, 1 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment3"]
-shape = SubResource( 12 )
+shape = SubResource( 4 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Environment3"]
 position = Vector2( 1, 0 )
-occluder = SubResource( 20 )
+occluder = SubResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 pause_mode = 1
-material = SubResource( 17 )
+material = SubResource( 10 )
 position = Vector2( 712, -144 )
 
 [node name="Camera" parent="Player" instance=ExtResource( 5 )]

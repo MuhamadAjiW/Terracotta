@@ -9,8 +9,7 @@ func change_scene(path):
 func transition(path):
 	if not "menu" in str(get_child(1).name):
 		$"/root/Global".caching_start()
-		$"/root/Global".player.event_triggered()
-	
+		
 	$Transition/ColorRect.visible = true
 	$Transition/AnimationPlayer.play("Fade")
 	get_tree().paused = true

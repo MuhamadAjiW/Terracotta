@@ -8,7 +8,7 @@ func _on_Continue_button_up():
 
 
 func _on_New_button_up():
-	get_parent().transition('res://Scenes/Test Level.tscn')
+	get_parent().transition('res://Scenes/Level 1.tscn')
 
 func _on_Exit_button_up():
 	get_tree().quit()

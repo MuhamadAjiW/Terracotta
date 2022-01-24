@@ -94,8 +94,8 @@ func gravity():
 
 
 
-func event_triggered():
-	print("Event Triggered")
+func event_triggered(action):
+	print("Event Triggered: ", action)
 	event = true
 	yield(get_tree().create_timer(0.5), "timeout")
 	event = false
@@ -129,5 +129,5 @@ func _physics_process(delta):
 
 	input_processing()
 	gravity()
-	move_and_slide(velocity, Vector2(0,-1))
+	move_and_slide(velocity, Vector2(0,-1), false)
 	velocity.x = lerp(velocity.x,0,0.15)
