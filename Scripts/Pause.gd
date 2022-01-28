@@ -47,7 +47,7 @@ func _on_Controls_button_up():
 
 
 func _on_Main_Menu_button_up():
-	get_parent().get_parent().get_parent().transition('res://Scenes/Main menu.tscn')
+	get_parent().transition('res://Scenes/Main menu.tscn')
 
 
 func _on_Close_button_up():

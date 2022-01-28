@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Graphics/Player Sprite/Walk3.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
@@ -16,34 +16,12 @@
 [ext_resource path="res://Graphics/Player Sprite/Drop2.png" type="Texture" id=14]
 [ext_resource path="res://Graphics/Player Sprite/Idle1.png" type="Texture" id=15]
 [ext_resource path="res://Graphics/Player Sprite/Idle2.png" type="Texture" id=16]
-[ext_resource path="res://Fonts/CHILLER.TTF" type="DynamicFontData" id=18]
-[ext_resource path="res://Scripts/Pause.gd" type="Script" id=19]
-[ext_resource path="res://Fonts/BRADHITC.TTF" type="DynamicFontData" id=20]
-[ext_resource path="res://Scripts/Inventory.gd" type="Script" id=21]
-[ext_resource path="res://Scenes/Menu Button white.tscn" type="PackedScene" id=22]
 
-[sub_resource type="DynamicFont" id=1]
-size = 72
-font_data = ExtResource( 18 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 32
-font_data = ExtResource( 20 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 72
-font_data = ExtResource( 18 )
-
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "idle",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 14 ) ],
-"loop": false,
-"name": "fall",
 "speed": 1.0
 }, {
 "frames": [ ExtResource( 13 ) ],
@@ -51,200 +29,45 @@ animations = [ {
 "name": "interact",
 "speed": 1.0
 }, {
+"frames": [ ExtResource( 11 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "fall",
+"speed": 1.0
+}, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "walk",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ) ],
 "loop": false,
 "name": "jump",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "walk",
+"speed": 3.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 32 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 712, 376 )
 script = ExtResource( 2 )
 
-[node name="Pause" type="Node2D" parent="."]
-pause_mode = 2
-script = ExtResource( 19 )
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Pause"]
-
-[node name="ColorRect" type="ColorRect" parent="Pause/CanvasLayer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.141176 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Menu" type="VBoxContainer" parent="Pause/CanvasLayer/ColorRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = 4.0
-rect_min_size = Vector2( 1368, 768 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CenterContainer" type="CenterContainer" parent="Pause/CanvasLayer/ColorRect/Menu"]
-margin_right = 1368.0
-margin_bottom = 384.0
-rect_min_size = Vector2( 1368, 384 )
-
-[node name="Label" type="Label" parent="Pause/CanvasLayer/ColorRect/Menu/CenterContainer"]
-margin_left = 549.0
-margin_top = 150.0
-margin_right = 819.0
-margin_bottom = 234.0
-custom_fonts/font = SubResource( 1 )
-text = "Game Paused"
-
-[node name="Button Container" type="VBoxContainer" parent="Pause/CanvasLayer/ColorRect/Menu"]
-margin_top = 388.0
-margin_right = 1368.0
-margin_bottom = 772.0
-rect_min_size = Vector2( 1368, 384 )
-
-[node name="Continue" parent="Pause/CanvasLayer/ColorRect/Menu/Button Container" instance=ExtResource( 22 )]
-margin_top = 0.0
-margin_bottom = 48.0
-focus_neighbour_bottom = NodePath("../Controls")
-text = "Continue"
-
-[node name="Controls" parent="Pause/CanvasLayer/ColorRect/Menu/Button Container" instance=ExtResource( 22 )]
-margin_top = 52.0
-margin_bottom = 100.0
-focus_neighbour_top = NodePath("../Continue")
-focus_neighbour_bottom = NodePath("../Main Menu")
-text = "Controls"
-margin_from_center = 90
-
-[node name="Main Menu" parent="Pause/CanvasLayer/ColorRect/Menu/Button Container" instance=ExtResource( 22 )]
-margin_top = 104.0
-margin_bottom = 152.0
-focus_neighbour_top = NodePath("../Controls")
-text = "Main menu"
-margin_from_center = 120
-
-[node name="Control overlay" type="ColorRect" parent="Pause/CanvasLayer/ColorRect"]
-visible = false
-margin_right = 1368.0
-margin_bottom = 768.0
-rect_min_size = Vector2( 1368, 768 )
-color = Color( 1, 1, 1, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Pause/CanvasLayer/ColorRect/Control overlay"]
-margin_left = 64.0
-margin_top = 64.0
-margin_right = 742.0
-margin_bottom = 413.0
-custom_fonts/font = SubResource( 2 )
-text = "Up arrow = jump
-Left arrow = move left
-Right arrow = move right
-Down arrow = interact
-I (Huruf I bukan l) = inventory
-Esc = pause
-
-di menu pake arrow key dan enter untuk navigasi"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Close" parent="Pause/CanvasLayer/ColorRect/Control overlay" instance=ExtResource( 22 )]
-margin_top = 544.0
-margin_bottom = 592.0
-text = "Close"
-margin_from_center = 70
-
-[node name="Inventory" type="Node2D" parent="."]
-pause_mode = 2
-script = ExtResource( 21 )
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Inventory"]
-
-[node name="ColorRect" type="ColorRect" parent="Inventory/CanvasLayer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.141176 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Itemholder" type="ColorRect" parent="Inventory/CanvasLayer/ColorRect"]
-margin_left = 64.0
-margin_top = 128.0
-margin_right = 864.0
-margin_bottom = 608.0
-rect_min_size = Vector2( 800, 480 )
-color = Color( 0, 0, 0, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GridContainer" type="GridContainer" parent="Inventory/CanvasLayer/ColorRect/Itemholder"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Inventory/CanvasLayer/ColorRect"]
-margin_left = 56.0
-margin_right = 262.0
-margin_bottom = 84.0
-custom_fonts/font = SubResource( 3 )
-text = "Inventory"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Itemdescription" type="ColorRect" parent="Inventory/CanvasLayer/ColorRect"]
-visible = false
-margin_left = 872.0
-margin_top = 128.0
-margin_right = 1304.0
-margin_bottom = 608.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Close" parent="Inventory/CanvasLayer/ColorRect" instance=ExtResource( 22 )]
-margin_left = -208.0
-margin_top = 640.0
-margin_right = 1160.0
-margin_bottom = 688.0
-text = "Close"
-margin_from_center = 70
-
 [node name="Sprite" type="AnimatedSprite" parent="."]
 use_parent_material = true
 position = Vector2( -2.28882e-05, -0.49603 )
 scale = Vector2( 1.3913, 1.4653 )
-frames = SubResource( 4 )
+frames = SubResource( 1 )
 animation = "interact"
 playing = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 use_parent_material = true
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 
 [node name="InteractTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -255,9 +78,3 @@ wait_time = 0.5
 
 [node name="AnimationDelay" type="Timer" parent="."]
 wait_time = 0.1
-
-[connection signal="button_up" from="Pause/CanvasLayer/ColorRect/Menu/Button Container/Continue" to="Pause" method="_on_Continue_button_up"]
-[connection signal="button_up" from="Pause/CanvasLayer/ColorRect/Menu/Button Container/Controls" to="Pause" method="_on_Controls_button_up"]
-[connection signal="button_up" from="Pause/CanvasLayer/ColorRect/Menu/Button Container/Main Menu" to="Pause" method="_on_Main_Menu_button_up"]
-[connection signal="button_up" from="Pause/CanvasLayer/ColorRect/Control overlay/Close" to="Pause" method="_on_Close_button_up"]
-[connection signal="button_up" from="Inventory/CanvasLayer/ColorRect/Close" to="Inventory" method="_on_Close_button_up"]

@@ -2,12 +2,12 @@ extends Node2D
 
 func change_scene(path):
 	var scene = load(path).instance()
-	get_child(1).free()
+	get_child(2).free()
 	add_child(scene)
-	move_child(scene, 1)
+	move_child(scene, 2)
 
 func transition(path):
-	if not "menu" in str(get_child(1).name):
+	if not "menu" in str(get_child(2).name):
 		$"/root/Global".caching_start()
 		
 	$Transition/ColorRect.visible = true

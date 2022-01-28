@@ -1,10 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Main menu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Scene Manager.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Pause.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Menu Button white.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Fonts/CHILLER.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://Fonts/BRADHITC.TTF" type="DynamicFontData" id=7]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Fade"
+[sub_resource type="DynamicFont" id=2]
+size = 72
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
@@ -26,6 +38,109 @@ tracks/0/keys = {
 pause_mode = 2
 script = ExtResource( 2 )
 
+[node name="Pause" type="Node2D" parent="SceneManager"]
+pause_mode = 2
+script = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SceneManager/Pause"]
+
+[node name="ColorRect" type="ColorRect" parent="SceneManager/Pause/CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.141176 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="SceneManager/Pause/CanvasLayer/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 1368, 768 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="SceneManager/Pause/CanvasLayer/ColorRect/Menu"]
+margin_right = 1368.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 1368, 384 )
+
+[node name="Label" type="Label" parent="SceneManager/Pause/CanvasLayer/ColorRect/Menu/CenterContainer"]
+margin_left = 549.0
+margin_top = 150.0
+margin_right = 819.0
+margin_bottom = 234.0
+custom_fonts/font = SubResource( 2 )
+text = "Game Paused"
+
+[node name="Button Container" type="VBoxContainer" parent="SceneManager/Pause/CanvasLayer/ColorRect/Menu"]
+margin_top = 388.0
+margin_right = 1368.0
+margin_bottom = 772.0
+rect_min_size = Vector2( 1368, 384 )
+
+[node name="Continue" parent="SceneManager/Pause/CanvasLayer/ColorRect/Menu/Button Container" instance=ExtResource( 5 )]
+margin_top = 0.0
+margin_bottom = 48.0
+focus_neighbour_bottom = NodePath("../Controls")
+text = "Continue"
+
+[node name="Controls" parent="SceneManager/Pause/CanvasLayer/ColorRect/Menu/Button Container" instance=ExtResource( 5 )]
+margin_top = 52.0
+margin_bottom = 100.0
+focus_neighbour_top = NodePath("../Continue")
+focus_neighbour_bottom = NodePath("../Main Menu")
+text = "Controls"
+margin_from_center = 90
+
+[node name="Main Menu" parent="SceneManager/Pause/CanvasLayer/ColorRect/Menu/Button Container" instance=ExtResource( 5 )]
+margin_top = 104.0
+margin_bottom = 152.0
+focus_neighbour_top = NodePath("../Controls")
+text = "Main menu"
+margin_from_center = 120
+
+[node name="Control overlay" type="ColorRect" parent="SceneManager/Pause/CanvasLayer/ColorRect"]
+visible = false
+margin_right = 1368.0
+margin_bottom = 768.0
+rect_min_size = Vector2( 1368, 768 )
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SceneManager/Pause/CanvasLayer/ColorRect/Control overlay"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 742.0
+margin_bottom = 413.0
+custom_fonts/font = SubResource( 3 )
+text = "Up arrow = jump
+Left arrow = move left
+Right arrow = move right
+Down arrow = interact
+I (Huruf I bukan l) = inventory
+Esc = pause
+
+di menu pake arrow key dan enter untuk navigasi"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close" parent="SceneManager/Pause/CanvasLayer/ColorRect/Control overlay" instance=ExtResource( 5 )]
+margin_top = 544.0
+margin_bottom = 592.0
+text = "Close"
+margin_from_center = 70
+
+[node name="Inventory" parent="SceneManager" instance=ExtResource( 3 )]
+
+[node name="Main menu" parent="SceneManager" instance=ExtResource( 1 )]
+pause_mode = 1
+
 [node name="Transition" type="CanvasLayer" parent="SceneManager"]
 pause_mode = 2
 
@@ -39,7 +154,9 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SceneManager/Transition"]
-anims/Fade = SubResource( 1 )
+anims/Fade = SubResource( 6 )
 
-[node name="Main menu" parent="SceneManager" instance=ExtResource( 1 )]
-pause_mode = 1
+[connection signal="button_up" from="SceneManager/Pause/CanvasLayer/ColorRect/Menu/Button Container/Continue" to="SceneManager/Pause" method="_on_Continue_button_up"]
+[connection signal="button_up" from="SceneManager/Pause/CanvasLayer/ColorRect/Menu/Button Container/Controls" to="SceneManager/Pause" method="_on_Controls_button_up"]
+[connection signal="button_up" from="SceneManager/Pause/CanvasLayer/ColorRect/Menu/Button Container/Main Menu" to="SceneManager/Pause" method="_on_Main_Menu_button_up"]
+[connection signal="button_up" from="SceneManager/Pause/CanvasLayer/ColorRect/Control overlay/Close" to="SceneManager/Pause" method="_on_Close_button_up"]
