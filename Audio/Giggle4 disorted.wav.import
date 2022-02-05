@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Giggle4 disorted.wav-0613c65f6a959a07ca72110f8de4c49f.sample"
+
+[deps]
+
+source_file="res://Audio/Giggle4 disorted.wav"
+dest_files=[ "res://.import/Giggle4 disorted.wav-0613c65f6a959a07ca72110f8de4c49f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

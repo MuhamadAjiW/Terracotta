@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Sign.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/tilemapping/Pixel18.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/BRADHITC.TTF" type="DynamicFontData" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24, 24 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 72
+font_data = ExtResource( 3 )
+
+[node name="Sign" type="Area2D"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.705882 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_top = -139.5
+margin_right = 145.0
+margin_bottom = 139.5
+custom_fonts/font = SubResource( 2 )
+text = "Hutan
+
+Keramat"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Use" type="AudioStreamPlayer" parent="."]
+
+[node name="delayTimer" type="Timer" parent="."]
+pause_mode = 1
+one_shot = true
+
+[connection signal="timeout" from="delayTimer" to="." method="_on_delayTimer_timeout"]

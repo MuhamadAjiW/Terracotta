@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Whale Cry Sound Effects No Copyright.mp3-9e851cce7fc798e857cd5d92e672e380.mp3str"
+
+[deps]
+
+source_file="res://Audio/Whale Cry Sound Effects No Copyright.mp3"
+dest_files=[ "res://.import/Whale Cry Sound Effects No Copyright.mp3-9e851cce7fc798e857cd5d92e672e380.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

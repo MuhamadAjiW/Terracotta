@@ -14,7 +14,7 @@ func enable_pause():
 
 func input_processing():
 	if Input.is_action_just_pressed("Escape"):
-		if conditionInControl == false:
+		if $"CanvasLayer/ColorRect/Confirm overlay".visible == false and $"CanvasLayer/ColorRect/Control overlay".visible == false:
 			conditionPaused = not conditionPaused
 			if conditionPaused:
 				$"CanvasLayer/ColorRect".visible = true
@@ -26,7 +26,10 @@ func input_processing():
 				get_tree().paused = false
 				get_parent().get_node("Inventory").enable_pause()
 		else:
-			_on_Close_button_up()
+			if $"CanvasLayer/ColorRect/Confirm overlay".visible == true:
+				_on_No_button_up()
+			else:
+				_on_Close_button_up()
 
 func _process(delta):
 	if pauseEnabled:
@@ -47,12 +50,27 @@ func _on_Controls_button_up():
 
 
 func _on_Main_Menu_button_up():
-	get_parent().get_parent().get_parent().transition('res://Scenes/Main menu.tscn')
+	$"CanvasLayer/ColorRect/Confirm overlay".visible = true
+	$"CanvasLayer/ColorRect/Confirm overlay/No".grab_focus()
 
+func _on_Yes_button_up():
+	$"/root/Global".audio.get_node("Forest").stop()
+	$"/root/Global".audio.get_node("Theme").play()
+	get_parent().transition('res://Scenes/Main menu.tscn')
+
+func _on_No_button_up():
+	$"CanvasLayer/ColorRect/Confirm overlay".visible = false
+	$"CanvasLayer/ColorRect/Menu/Button Container/Continue".grab_focus()
 
 func _on_Close_button_up():
 	conditionInControl = false
 	$"CanvasLayer/ColorRect/Control overlay".visible = false
 	$"CanvasLayer/ColorRect/Menu".visible = true
 	$"CanvasLayer/ColorRect/Menu/Button Container/Controls".grab_focus()
+
+
+
+
+
+
 

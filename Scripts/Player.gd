@@ -40,6 +40,7 @@ func input_processing():
 	if Input.is_action_pressed("Up"):
 		if is_on_floor():
 			velocity.y -= jumpspeed
+			$Audio/Jump.play()
 
 	if Input.is_action_pressed("Shift"):
 		speed = lerp(speed,sprintspeed,0.15)
@@ -90,14 +91,14 @@ func detect_direction():
 
 func gravity():
 	if velocity.y < 500:
-		velocity.y += 25
+		velocity.y += 20
 
 
 
 func event_triggered(action):
 	print("Event Triggered: ", action)
 	event = true
-	yield(get_tree().create_timer(0.5), "timeout")
+	yield(get_tree().create_timer(1), "timeout")
 	event = false
 
 
@@ -109,14 +110,18 @@ func _physics_process(delta):
 			sprite.play("idle")
 		WALK:
 			sprite.play("walk")
+			if $Audio/Steps.playing == false:
+				$Audio/Steps.play()
 		RUN:
 			sprite.play("run")
+			if $Audio/Quicksteps.playing == false:
+				$Audio/Quicksteps.play()
 		JUMP:
 			sprite.play("jump")
 		FALL:
 			sprite.play("fall")
 		INTERACT:
-			yield(get_tree().create_timer(delta), "timeout")
+			yield(get_tree().create_timer(delta*2), "timeout")
 			if not event:
 				sprite.play("interact")
 

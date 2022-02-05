@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Forest Ambience - Nature Sound Effect (Free Download).mp3-ae862514174a37217c1cacc98b737c47.mp3str"
+
+[deps]
+
+source_file="res://Audio/Forest Ambience - Nature Sound Effect (Free Download).mp3"
+dest_files=[ "res://.import/Forest Ambience - Nature Sound Effect (Free Download).mp3-ae862514174a37217c1cacc98b737c47.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

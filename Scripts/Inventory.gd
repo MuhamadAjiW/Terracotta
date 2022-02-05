@@ -4,8 +4,8 @@ var inventoryOpen = false
 var pauseEnabled = true
 
 func _ready():
-	pass
-
+	$CanvasLayer/ColorRect/Close.grab_focus()
+	
 func disable_pause():
 	pauseEnabled = false
 func enable_pause():
@@ -37,3 +37,8 @@ func _process(delta):
 
 func _on_Close_button_up():
 	Input.action_press("Letter I")
+
+
+
+func resetInv():
+	print("Inventory reseet")

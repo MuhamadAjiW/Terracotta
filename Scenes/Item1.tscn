@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Itemholder.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/tilemapping/Pixel16.png" type="Texture" id=2]
+[ext_resource path="res://Audio/Use.wav" type="AudioStream" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "sparkle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Item1" type="Node2D"]
+position = Vector2( 432, 672 )
+script = ExtResource( 1 )
+itemname = "Item1"
+
+[node name="Detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/sparkle = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -1.76807, 2.47485 )
+texture = ExtResource( 2 )
+
+[node name="Taken" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[connection signal="finished" from="Taken" to="." method="_on_Taken_finished"]

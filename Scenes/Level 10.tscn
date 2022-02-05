@@ -1,0 +1,396 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://Scenes/Basic Lighting.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Level 10.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/CameraDefault.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Graphics/3.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Finaldoor.gd" type="Script" id=6]
+[ext_resource path="res://Graphics/tilemapping/Pixel2.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Flickeringlights.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Graphics/tilemapping/Pixel3.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/tilemapping/Pixel4.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/tilemapping/Pixel5.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/tilemapping/Pixel8.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/tilemapping/Pixel7.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/tilemapping/Pixel6.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/tilemapping/Pixel.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/tilemapping/Pixel9.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/tilemapping/Pixel10.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/tilemapping/Pixel11.png" type="Texture" id=19]
+[ext_resource path="res://Graphics/tilemapping/Pixel12.png" type="Texture" id=20]
+[ext_resource path="res://Graphics/tilemapping/Pixel13.png" type="Texture" id=21]
+[ext_resource path="res://Graphics/tilemapping/Pixel14.png" type="Texture" id=22]
+[ext_resource path="res://Graphics/tilemapping/Pixel15.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/House1.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Graphics/lightcone.png" type="Texture" id=26]
+[ext_resource path="res://Graphics/8'.png" type="Texture" id=27]
+[ext_resource path="res://Scenes/PassageLocked.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Graphics/8.png" type="Texture" id=31]
+
+[sub_resource type="CanvasItemMaterial" id=2]
+
+[sub_resource type="TileSet" id=1]
+0/name = "Pixel.png 0"
+0/texture = ExtResource( 16 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Pixel3.png 1"
+1/texture = ExtResource( 10 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Pixel4.png 2"
+2/texture = ExtResource( 11 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Pixel5.png 3"
+3/texture = ExtResource( 12 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 64, 64 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Pixel6.png 4"
+4/texture = ExtResource( 15 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 64, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Pixel7.png 5"
+5/texture = ExtResource( 14 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 64, 64 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "Pixel8.png 6"
+6/texture = ExtResource( 13 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 64, 64 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "Pixel9.png 7"
+7/texture = ExtResource( 17 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 64, 64 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "Pixel10.png 8"
+8/texture = ExtResource( 18 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 0, 64, 64 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+9/name = "Pixel11.png 9"
+9/texture = ExtResource( 19 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 0, 64, 64 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+10/name = "Pixel12.png 10"
+10/texture = ExtResource( 20 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 0, 64, 64 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "Pixel13.png 11"
+11/texture = ExtResource( 21 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 0, 0, 64, 64 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
+12/name = "Pixel14.png 12"
+12/texture = ExtResource( 22 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 0, 0, 64, 64 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+13/name = "Pixel15.png 13"
+13/texture = ExtResource( 23 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 0, 0, 64, 64 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape_one_way = false
+13/shape_one_way_margin = 0.0
+13/shapes = [  ]
+13/z_index = 0
+14/name = "Pixel2.png 14"
+14/texture = ExtResource( 7 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 0, 0, 64, 64 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape_one_way = false
+14/shape_one_way_margin = 0.0
+14/shapes = [  ]
+14/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 12.76, 15.36 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1064, 320 )
+
+[node name="Level 10" type="Node2D"]
+pause_mode = 1
+material = SubResource( 2 )
+script = ExtResource( 2 )
+
+[node name="Background" type="Sprite" parent="."]
+light_mask = 2
+use_parent_material = true
+position = Vector2( 920, 0 )
+texture = ExtResource( 31 )
+
+[node name="Sprite" type="Sprite" parent="Background"]
+use_parent_material = true
+position = Vector2( 5112, 0 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 31 )
+
+[node name="Background" type="Sprite" parent="Background"]
+light_mask = 2
+use_parent_material = true
+position = Vector2( 10224, 0 )
+texture = ExtResource( 27 )
+
+[node name="Sprite" type="Sprite" parent="Background/Background"]
+use_parent_material = true
+position = Vector2( 5112, 0 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 31 )
+
+[node name="Background" type="Sprite" parent="Background/Background"]
+light_mask = 2
+use_parent_material = true
+position = Vector2( 10224, 0 )
+texture = ExtResource( 31 )
+
+[node name="House" parent="." instance=ExtResource( 24 )]
+position = Vector2( 441.941, 6.48602 )
+
+[node name="TileMap" type="TileMap" parent="House"]
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( 589832, 536870918, 0, 655368, 536870918, 0 )
+
+[node name="Ground" type="StaticBody2D" parent="."]
+use_parent_material = true
+position = Vector2( 920, 1536 )
+
+[node name="Sprite" type="Sprite" parent="Ground"]
+use_parent_material = true
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+use_parent_material = true
+scale = Vector2( 200, 50 )
+shape = SubResource( 3 )
+
+[node name="Ground" type="StaticBody2D" parent="Ground"]
+use_parent_material = true
+position = Vector2( 5112, 0 )
+
+[node name="Sprite" type="Sprite" parent="Ground/Ground"]
+use_parent_material = true
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground"]
+use_parent_material = true
+scale = Vector2( 200, 50 )
+shape = SubResource( 3 )
+
+[node name="Ground2" type="StaticBody2D" parent="Ground"]
+use_parent_material = true
+position = Vector2( 10224, 0 )
+
+[node name="Sprite" type="Sprite" parent="Ground/Ground2"]
+use_parent_material = true
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground2"]
+use_parent_material = true
+scale = Vector2( 200, 50 )
+shape = SubResource( 3 )
+
+[node name="Ground" type="StaticBody2D" parent="Ground/Ground2"]
+use_parent_material = true
+position = Vector2( 5112, 0 )
+
+[node name="Sprite" type="Sprite" parent="Ground/Ground2/Ground"]
+use_parent_material = true
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground2/Ground"]
+use_parent_material = true
+scale = Vector2( 200, 50 )
+shape = SubResource( 3 )
+
+[node name="Ground3" type="StaticBody2D" parent="Ground"]
+use_parent_material = true
+position = Vector2( 20432, 0 )
+
+[node name="Sprite" type="Sprite" parent="Ground/Ground3"]
+use_parent_material = true
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground3"]
+use_parent_material = true
+scale = Vector2( 200, 50 )
+shape = SubResource( 3 )
+
+[node name="Passage2" parent="." instance=ExtResource( 29 )]
+position = Vector2( 984, 648 )
+itemname = "Item0"
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+pause_mode = 1
+position = Vector2( 984, 648 )
+
+[node name="Camera" parent="Player" instance=ExtResource( 4 )]
+
+[node name="Basic Lighting" parent="Player" instance=ExtResource( 1 )]
+visible = false
+
+[node name="Door" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1560, 648 )
+script = ExtResource( 6 )
+
+[node name="Endingzone" type="Area2D" parent="."]
+position = Vector2( 6712, 448 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Endingzone"]
+shape = SubResource( 4 )
+
+[node name="Lighting2" type="Node2D" parent="."]
+position = Vector2( 848, 504 )
+script = ExtResource( 8 )
+
+[node name="Light2D" type="Light2D" parent="Lighting2"]
+rotation = 1.5708
+scale = Vector2( 1, 2 )
+texture = ExtResource( 26 )
+color = Color( 1, 0.741176, 0.411765, 1 )
+
+[node name="Timer" type="Timer" parent="Lighting2"]
+one_shot = true
+
+[connection signal="timeout" from="Lighting2/Timer" to="Lighting2" method="_on_Timer_timeout"]

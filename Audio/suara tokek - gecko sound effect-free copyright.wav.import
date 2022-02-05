@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/suara tokek - gecko sound effect-free copyright.wav-94b4adb69e079f244c126f30bd1572c4.sample"
+
+[deps]
+
+source_file="res://Audio/suara tokek - gecko sound effect-free copyright.wav"
+dest_files=[ "res://.import/suara tokek - gecko sound effect-free copyright.wav-94b4adb69e079f244c126f30bd1572c4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

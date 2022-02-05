@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/REPULSIVE - Cry Of The Unheard [COPYRIGHT FREE HORROR MUSIC].mp3-1b93ae159c4776ecc5257a5d5faed984.mp3str"
+
+[deps]
+
+source_file="res://Audio/REPULSIVE - Cry Of The Unheard [COPYRIGHT FREE HORROR MUSIC].mp3"
+dest_files=[ "res://.import/REPULSIVE - Cry Of The Unheard [COPYRIGHT FREE HORROR MUSIC].mp3-1b93ae159c4776ecc5257a5d5faed984.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
