@@ -2,13 +2,14 @@ extends Node2D
 
 onready var delayTimer = $delayTimer
 onready var locktimer = $lockTimer
+onready var opentimer = $Opentimer
 export(String) var itemname = "none"
 var called = false
 var open = false
-
+var ready = false
 
 func _ready():
-	pass # Replace with function body.
+	opentimer.start(2)
 
 func delay():
 	if delayTimer.is_stopped():
@@ -19,7 +20,7 @@ func _on_delayTimer_timeout():
 func _input(event):
 	if $opener.overlaps_body($"/root/Global".player):
 		if $"/root/Global".player.state == $"/root/Global".player.INTERACT:
-			if ($"/root/Global".inventory.get_node(itemname).visible == true or itemname == "none"):
+			if ($"/root/Global".inventory.get_node(itemname).visible == true or itemname == "none") and ready == true:
 				if called == false:
 					$"/root/Global".player.event_triggered("door")
 					$Doorsound.play()
@@ -46,3 +47,7 @@ func _input(event):
 
 func _on_lockTimer_timeout():
 	$RichTextLabel.visible = false
+
+
+func _on_Opentimer_timeout():
+	ready = true

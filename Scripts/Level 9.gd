@@ -8,6 +8,8 @@ func _ready():
 	$"/root/Global".audio.get_node("Theme").stop()
 	if $"/root/Global".audio.get_node("Themedisorted").is_playing() == false:
 		$"/root/Global".audio.get_node("Themedisorted").play()
+	
+	
 
 
 func _on_Timer_timeout():

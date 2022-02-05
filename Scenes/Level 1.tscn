@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Scenes/Basic Lighting.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Graphics/2.png" type="Texture" id=2]
@@ -29,9 +29,8 @@
 [ext_resource path="res://Graphics/2'.png" type="Texture" id=27]
 [ext_resource path="res://Scenes/Sign.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Scenes/PassageLocked.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Scripts/SecretPassage.gd" type="Script" id=30]
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="TileSet" id=4]
 0/name = "Pixel.png 0"
 0/texture = ExtResource( 16 )
 0/tex_offset = Vector2( 0, 0 )
@@ -249,7 +248,7 @@ polygon = PoolVector2Array( 0, 64, 0, 64, 64, 0, 64, 64 )
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 64, 0, 64, 64, 0, 64, 64 )
 
-[sub_resource type="OccluderPolygon2D" id=4]
+[sub_resource type="OccluderPolygon2D" id=22]
 polygon = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
@@ -327,7 +326,7 @@ points = PoolVector2Array( 64, 16, 0, 16, 0, 0, 64, 0 )
 1/region = Rect2( 0, 0, 64, 64 )
 1/tile_mode = 0
 1/occluder_offset = Vector2( 0, 0 )
-1/occluder = SubResource( 4 )
+1/occluder = SubResource( 22 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -536,12 +535,12 @@ position = Vector2( 12064, 736 )
 position = Vector2( 8, -8 )
 
 [node name="Interior" type="TileMap" parent="House"]
-tile_set = SubResource( 1 )
+tile_set = SubResource( 4 )
 format = 1
 tile_data = PoolIntArray( 393213, 1610612745, 0, 393214, 1610612746, 0, 393215, 1073741833, 0, 524290, 11, 0, 524291, 11, 0, 655351, -2147483638, 0, 589826, 11, 0, 589827, 11, 0, 720887, -2147483638, 0, 720892, 1073741836, 0, 720893, 1610612749, 0, 720894, 1610612748, 0, 655362, 11, 0, 655363, 11, 0, 655367, 8, 0, 655368, 536870921, 0, 655369, 10, 0, 655370, 9, 0, 655371, 536870920, 0, 786423, -2147483638, 0 )
 
 [node name="Interior2" type="TileMap" parent="House"]
-tile_set = SubResource( 1 )
+tile_set = SubResource( 4 )
 format = 1
 tile_data = PoolIntArray( 524290, -1073741815, 0, 524291, -536870903, 0, 589826, -2147483638, 0, 589827, -1610612726, 0, 655362, -2147483638, 0, 655363, -1610612726, 0, 655367, 8, 0, 655368, 536870921, 0, 655369, 10, 0, 655370, 9, 0, 655371, 536870920, 0 )
 
@@ -560,12 +559,12 @@ position = Vector2( 96, 640 )
 position = Vector2( 3672, -8 )
 
 [node name="Interior2" type="TileMap" parent="House2"]
-tile_set = SubResource( 1 )
+tile_set = SubResource( 4 )
 format = 1
 tile_data = PoolIntArray( 458756, 14, 0, 458757, 536870916, 0, 458758, 536870916, 0, 458759, 536870916, 0, 458760, 536870926, 0, 524291, 14, 0, 524292, 536870916, 0, 524293, 536870923, 0, 524294, 536870923, 0, 524295, 536870923, 0, 524296, 536870916, 0, 524297, 536870926, 0, 589827, 6, 0, 589828, 536870923, 0, 589829, 536870923, 0, 589830, 536870923, 0, 589831, 536870923, 0, 589832, 536870923, 0, 589833, 6, 0, 589837, 536870918, 0, 655363, 6, 0, 655364, 536870923, 0, 655365, 536870923, 0, 655366, 536870923, 0, 655367, 536870923, 0, 655368, 536870923, 0, 655369, 6, 0, 655373, 536870918, 0 )
 
 [node name="Interior" type="TileMap" parent="House2"]
-tile_set = SubResource( 1 )
+tile_set = SubResource( 4 )
 format = 1
 tile_data = PoolIntArray( 655362, 8, 0, 655363, 536870921, 0, 655364, 10, 0, 655365, 10, 0, 655366, 10, 0, 655367, 10, 0, 655368, 10, 0, 655369, 9, 0, 655370, 536870920, 0 )
 
@@ -585,13 +584,13 @@ scale = Vector2( 1, -1 )
 
 [node name="Interior" type="TileMap" parent="House3"]
 position = Vector2( 0.000488281, 0 )
-tile_set = SubResource( 1 )
+tile_set = SubResource( 4 )
 format = 1
 tile_data = PoolIntArray( 393213, 1610612745, 0, 393214, 1610612746, 0, 393215, 1073741833, 0, 524290, 11, 0, 524291, 11, 0, 655351, -2147483638, 0, 589826, 11, 0, 589827, 11, 0, 720887, -2147483638, 0, 720892, 1073741836, 0, 720893, 1610612749, 0, 720894, 1610612748, 0, 655362, 11, 0, 655363, 11, 0, 655367, 8, 0, 655368, 536870921, 0, 655369, 10, 0, 655370, 9, 0, 655371, 536870920, 0, 786423, -2147483638, 0 )
 
 [node name="Interior2" type="TileMap" parent="House3"]
 position = Vector2( 0.000488281, 0 )
-tile_set = SubResource( 1 )
+tile_set = SubResource( 4 )
 format = 1
 tile_data = PoolIntArray( 524290, -1073741815, 0, 524291, -536870903, 0, 589826, -2147483638, 0, 589827, -1610612726, 0, 655362, -2147483638, 0, 655363, -1610612726, 0, 655367, 8, 0, 655368, 536870921, 0, 655369, 10, 0, 655370, 9, 0, 655371, 536870920, 0 )
 
@@ -677,8 +676,3 @@ position = Vector2( 8, 664 )
 
 [node name="Basic Lighting" parent="Player" instance=ExtResource( 1 )]
 visible = false
-
-[node name="Secretpassage" parent="." instance=ExtResource( 6 )]
-visible = false
-position = Vector2( 608, 632 )
-script = ExtResource( 30 )

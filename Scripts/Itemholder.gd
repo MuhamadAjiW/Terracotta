@@ -23,6 +23,7 @@ func _process(delta):
 	if $Detector.overlaps_body($"/root/Global".player):
 		if $"/root/Global".player.state == $"/root/Global".player.INTERACT:
 			if called == false:
+				visible = false
 				called = true
 				$"/root/Global".player.event_triggered("itemholder")
 					

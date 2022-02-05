@@ -1,15 +1,15 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scenes/Basic Lighting.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Level 10.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Level 10.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/CameraDefault.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Graphics/3.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Finaldoor.gd" type="Script" id=6]
-[ext_resource path="res://Graphics/tilemapping/Pixel2.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Finaldoor.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Enemy1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/Flickeringlights.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Graphics/tilemapping/Pixel3.png" type="Texture" id=10]
+[ext_resource path="res://Scripts/Lastsurprise.gd" type="Script" id=10]
 [ext_resource path="res://Graphics/tilemapping/Pixel4.png" type="Texture" id=11]
 [ext_resource path="res://Graphics/tilemapping/Pixel5.png" type="Texture" id=12]
 [ext_resource path="res://Graphics/tilemapping/Pixel8.png" type="Texture" id=13]
@@ -24,14 +24,19 @@
 [ext_resource path="res://Graphics/tilemapping/Pixel14.png" type="Texture" id=22]
 [ext_resource path="res://Graphics/tilemapping/Pixel15.png" type="Texture" id=23]
 [ext_resource path="res://Scenes/House1.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Graphics/tilemapping/Pixel2.png" type="Texture" id=25]
 [ext_resource path="res://Graphics/lightcone.png" type="Texture" id=26]
 [ext_resource path="res://Graphics/8'.png" type="Texture" id=27]
+[ext_resource path="res://Graphics/tilemapping/Pixel3.png" type="Texture" id=28]
 [ext_resource path="res://Scenes/PassageLocked.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/Endingzone.gd" type="Script" id=30]
 [ext_resource path="res://Graphics/8.png" type="Texture" id=31]
+[ext_resource path="res://Graphics/2.png" type="Texture" id=32]
 
-[sub_resource type="CanvasItemMaterial" id=2]
+[sub_resource type="CanvasItemMaterial" id=1]
+light_mode = 2
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="TileSet" id=2]
 0/name = "Pixel.png 0"
 0/texture = ExtResource( 16 )
 0/tex_offset = Vector2( 0, 0 )
@@ -47,7 +52,7 @@
 0/shapes = [  ]
 0/z_index = 0
 1/name = "Pixel3.png 1"
-1/texture = ExtResource( 10 )
+1/texture = ExtResource( 28 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 0, 0, 64, 64 )
@@ -229,7 +234,7 @@
 13/shapes = [  ]
 13/z_index = 0
 14/name = "Pixel2.png 14"
-14/texture = ExtResource( 7 )
+14/texture = ExtResource( 25 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 0, 0, 64, 64 )
@@ -249,9 +254,24 @@ extents = Vector2( 12.76, 15.36 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 1064, 320 )
 
+[sub_resource type="Animation" id=5]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="Level 10" type="Node2D"]
 pause_mode = 1
-material = SubResource( 2 )
+material = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Background" type="Sprite" parent="."]
@@ -284,13 +304,45 @@ use_parent_material = true
 position = Vector2( 10224, 0 )
 texture = ExtResource( 31 )
 
+[node name="Background2" type="Sprite" parent="."]
+visible = false
+light_mask = 2
+use_parent_material = true
+position = Vector2( 920, 0 )
+texture = ExtResource( 32 )
+
+[node name="Sprite" type="Sprite" parent="Background2"]
+use_parent_material = true
+position = Vector2( 5112, 0 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 32 )
+
+[node name="Background" type="Sprite" parent="Background2"]
+light_mask = 2
+use_parent_material = true
+position = Vector2( 10224, 0 )
+texture = ExtResource( 32 )
+
+[node name="Sprite" type="Sprite" parent="Background2/Background"]
+use_parent_material = true
+position = Vector2( 5112, 0 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 32 )
+
+[node name="Background" type="Sprite" parent="Background2/Background"]
+light_mask = 2
+use_parent_material = true
+position = Vector2( 10224, 0 )
+texture = ExtResource( 32 )
+
 [node name="House" parent="." instance=ExtResource( 24 )]
-position = Vector2( 441.941, 6.48602 )
+use_parent_material = true
+position = Vector2( 440, 8 )
 
 [node name="TileMap" type="TileMap" parent="House"]
-tile_set = SubResource( 1 )
+tile_set = SubResource( 2 )
 format = 1
-tile_data = PoolIntArray( 589832, 536870918, 0, 655368, 536870918, 0 )
+tile_data = PoolIntArray( 589830, 536870918, 0, 655366, 536870918, 0 )
 
 [node name="Ground" type="StaticBody2D" parent="."]
 use_parent_material = true
@@ -358,27 +410,45 @@ scale = Vector2( 200, 50 )
 shape = SubResource( 3 )
 
 [node name="Passage2" parent="." instance=ExtResource( 29 )]
-position = Vector2( 984, 648 )
+position = Vector2( 856, 648 )
 itemname = "Item0"
+path = "res://Scenes/Level 9.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 pause_mode = 1
-position = Vector2( 984, 648 )
+position = Vector2( 896, 648 )
 
 [node name="Camera" parent="Player" instance=ExtResource( 4 )]
 
 [node name="Basic Lighting" parent="Player" instance=ExtResource( 1 )]
-visible = false
 
 [node name="Door" parent="." instance=ExtResource( 9 )]
+use_parent_material = true
 position = Vector2( 1560, 648 )
 script = ExtResource( 6 )
 
+[node name="Opentimer" type="Timer" parent="Door"]
+one_shot = true
+
 [node name="Endingzone" type="Area2D" parent="."]
 position = Vector2( 6712, 448 )
+script = ExtResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Endingzone"]
 shape = SubResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Endingzone"]
+
+[node name="ColorRect" type="ColorRect" parent="Endingzone/CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Endingzone/CanvasLayer"]
+anims/fade = SubResource( 5 )
 
 [node name="Lighting2" type="Node2D" parent="."]
 position = Vector2( 848, 504 )
@@ -393,4 +463,15 @@ color = Color( 1, 0.741176, 0.411765, 1 )
 [node name="Timer" type="Timer" parent="Lighting2"]
 one_shot = true
 
+[node name="Enemy1" parent="." instance=ExtResource( 7 )]
+use_parent_material = false
+position = Vector2( 352, 680 )
+script = ExtResource( 10 )
+
+[node name="Timer" type="Timer" parent="Enemy1"]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Door/Opentimer" to="Door" method="_on_Opentimer_timeout"]
 [connection signal="timeout" from="Lighting2/Timer" to="Lighting2" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Enemy1/Timer" to="Enemy1" method="_on_Timer_timeout"]

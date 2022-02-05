@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Goodbye.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Menu Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fonts/BRADHITC.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Graphics/Background.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 72
+font_data = ExtResource( 3 )
+
+[node name="Goodbye" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+texture = ExtResource( 4 )
+offset = Vector2( 684, 384 )
+
+[node name="Menu Button2" parent="CanvasLayer" instance=ExtResource( 2 )]
+margin_left = 328.0
+margin_top = 528.0
+margin_right = 1696.0
+margin_bottom = 576.0
+focus_neighbour_bottom = NodePath("../Menu Button")
+text = "Main menu"
+margin_from_center = 120
+
+[node name="Menu Button" parent="CanvasLayer" instance=ExtResource( 2 )]
+margin_left = 328.0
+margin_top = 584.0
+margin_right = 1696.0
+margin_bottom = 632.0
+focus_neighbour_top = NodePath("../Menu Button2")
+text = "Exit"
+margin_from_center = 80
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 96.0
+margin_top = 128.0
+margin_right = 791.0
+margin_bottom = 219.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Thanks for Playing! :)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="CanvasLayer/Menu Button2" to="." method="_on_Menu_Button2_button_up"]
+[connection signal="button_up" from="CanvasLayer/Menu Button" to="." method="_on_Menu_Button_button_up"]

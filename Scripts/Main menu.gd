@@ -19,4 +19,14 @@ func _on_New_button_up():
 
 func _on_Exit_button_up():
 	get_tree().quit()
-	
+
+func _on_Controls_button_up():
+	$"Main Container".visible = false
+	$"Control overlay".visible = true
+	$"Control overlay/Close".grab_focus()
+
+
+func _on_Close_button_up():
+	$"Main Container".visible = true
+	$"Control overlay".visible = false
+	$"Main Container/Button Container/Controls".grab_focus()

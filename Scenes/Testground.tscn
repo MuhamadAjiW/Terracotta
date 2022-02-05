@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Enemy1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Graphics/3.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/CameraDefault.tscn" type="PackedScene" id=21]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12.76, 15.36 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+use_parent_material = true
+position = Vector2( 920, 1536 )
+
+[node name="Sprite" type="Sprite" parent="Ground"]
+use_parent_material = true
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+use_parent_material = true
+scale = Vector2( 200, 50 )
+shape = SubResource( 1 )
+
+[node name="Ground" type="StaticBody2D" parent="Ground"]
+use_parent_material = true
+position = Vector2( 5112, 0 )
+
+[node name="Sprite" type="Sprite" parent="Ground/Ground"]
+use_parent_material = true
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground"]
+use_parent_material = true
+scale = Vector2( 200, 50 )
+shape = SubResource( 1 )
+
+[node name="Ground2" type="StaticBody2D" parent="Ground"]
+use_parent_material = true
+position = Vector2( 10224, 0 )
+
+[node name="Sprite" type="Sprite" parent="Ground/Ground2"]
+use_parent_material = true
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground2"]
+use_parent_material = true
+scale = Vector2( 200, 50 )
+shape = SubResource( 1 )
+
+[node name="Ground" type="StaticBody2D" parent="Ground/Ground2"]
+use_parent_material = true
+position = Vector2( 5112, 0 )
+
+[node name="Sprite" type="Sprite" parent="Ground/Ground2/Ground"]
+use_parent_material = true
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground2/Ground"]
+use_parent_material = true
+scale = Vector2( 200, 50 )
+shape = SubResource( 1 )
+
+[node name="Ground3" type="StaticBody2D" parent="Ground"]
+use_parent_material = true
+position = Vector2( 20432, 0 )
+
+[node name="Sprite" type="Sprite" parent="Ground/Ground3"]
+use_parent_material = true
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground3"]
+use_parent_material = true
+scale = Vector2( 200, 50 )
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 240, 728 )
+
+[node name="Camera" parent="Player" instance=ExtResource( 21 )]
+
+[node name="Enemy1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 360, 735.095 )

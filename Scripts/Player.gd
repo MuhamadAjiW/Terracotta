@@ -23,6 +23,7 @@ var velocity: Vector2
 var speed = walkspeed
 var state = IDLE
 var event = false
+var cutscene = false
 
 onready var direction = $"/root/Global".direction
 
@@ -132,7 +133,9 @@ func _physics_process(delta):
 		RIGHT:
 			sprite.flip_h = false
 
-	input_processing()
+	if cutscene == false:
+		input_processing()
+	
 	gravity()
 	move_and_slide(velocity, Vector2(0,-1), false)
 	velocity.x = lerp(velocity.x,0,0.15)

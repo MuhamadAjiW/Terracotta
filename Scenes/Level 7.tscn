@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Graphics/tilemapping/Pixel4.png" type="Texture" id=1]
 [ext_resource path="res://Graphics/tilemapping/Pixel2.png" type="Texture" id=2]
@@ -24,8 +24,10 @@
 [ext_resource path="res://Graphics/lightcone.png" type="Texture" id=22]
 [ext_resource path="res://Graphics/tilemapping/Pixel17.png" type="Texture" id=23]
 [ext_resource path="res://Scripts/Door movements.gd" type="Script" id=24]
-[ext_resource path="res://Scenes/Item1.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Graphics/tilemapping/Pixel16.png" type="Texture" id=25]
 [ext_resource path="res://Scripts/Passagelevel7.gd" type="Script" id=26]
+[ext_resource path="res://Audio/Giggle4 disorted.wav" type="AudioStream" id=27]
+[ext_resource path="res://Scripts/Itemholder2.gd" type="Script" id=28]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 2
@@ -524,6 +526,23 @@ points = PoolVector2Array( 64, 16, 0, 16, 0, 0, 64, 0 )
 } ]
 9/z_index = 0
 
+[sub_resource type="CircleShape2D" id=24]
+
+[sub_resource type="Animation" id=25]
+resource_name = "sparkle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="Level 7" type="Node2D"]
 pause_mode = 1
 material = SubResource( 1 )
@@ -576,8 +595,36 @@ texture = ExtResource( 22 )
 [node name="Timer" type="Timer" parent="Lighting"]
 one_shot = true
 
-[node name="Item1" parent="." instance=ExtResource( 25 )]
+[node name="Item1" type="Node2D" parent="."]
 position = Vector2( 1376, 914.475 )
+script = ExtResource( 28 )
 itemname = "Item3"
 
+[node name="Detector" type="Area2D" parent="Item1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item1/Detector"]
+shape = SubResource( 24 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Item1"]
+anims/sparkle = SubResource( 25 )
+
+[node name="Sprite" type="Sprite" parent="Item1"]
+position = Vector2( -1.76807, 2.47485 )
+texture = ExtResource( 25 )
+
+[node name="Taken" type="AudioStreamPlayer" parent="Item1"]
+stream = ExtResource( 27 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Item1"]
+
+[node name="ColorRect" type="ColorRect" parent="Item1/CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.580392, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="timeout" from="Lighting/Timer" to="Lighting" method="_on_Timer_timeout"]
+[connection signal="finished" from="Item1/Taken" to="Item1" method="_on_Taken_finished"]

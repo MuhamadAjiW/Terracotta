@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Passage.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 64 )
 
 [node name="Passage" type="Area2D"]
@@ -10,4 +10,4 @@ position = Vector2( 0, -64 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 22 )
+shape = SubResource( 1 )

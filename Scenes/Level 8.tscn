@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Scripts/Level 8.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/3.png" type="Texture" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://Scenes/PassageLocked.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Scripts/Flickeringlights.gd" type="Script" id=28]
 [ext_resource path="res://Graphics/lightcone.png" type="Texture" id=29]
+[ext_resource path="res://Scenes/Enemy1.tscn" type="PackedScene" id=30]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 light_mode = 2
@@ -534,6 +535,7 @@ points = PoolVector2Array( 64, 16, 0, 16, 0, 0, 64, 0 )
 9/z_index = 0
 
 [node name="Level 8" type="Node2D"]
+pause_mode = 1
 material = SubResource( 1 )
 script = ExtResource( 1 )
 
@@ -725,6 +727,7 @@ itemname = "Item3"
 [node name="Door6" parent="." instance=ExtResource( 26 )]
 use_parent_material = true
 position = Vector2( 9528, 640 )
+itemname = "Item0"
 
 [node name="Lighting" type="Node2D" parent="."]
 position = Vector2( 7824, -448 )
@@ -842,6 +845,10 @@ color = Color( 1, 0.741176, 0.411765, 1 )
 
 [node name="Timer" type="Timer" parent="Lighting2"]
 one_shot = true
+
+[node name="Enemy1" parent="." instance=ExtResource( 30 )]
+use_parent_material = false
+position = Vector2( 4800, 672 )
 
 [connection signal="timeout" from="Lighting/Timer" to="Lighting" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Lighting2/Timer" to="Lighting2" method="_on_Timer_timeout"]
