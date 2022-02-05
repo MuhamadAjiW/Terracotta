@@ -10,11 +10,19 @@
 size = 72
 font_data = ExtResource( 7 )
 
+<<<<<<< HEAD
 [sub_resource type="DynamicFont" id=2]
 size = 36
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=3]
+=======
+[sub_resource type="DynamicFont" id=4]
+size = 36
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=5]
+>>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 size = 24
 font_data = ExtResource( 8 )
 
@@ -47,6 +55,7 @@ __meta__ = {
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/ColorRect/Itemholder"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+<<<<<<< HEAD
 margin_left = 16.0
 margin_top = 16.0
 margin_right = -16.0
@@ -55,17 +64,28 @@ rect_min_size = Vector2( 768, 448 )
 custom_constants/vseparation = 16
 custom_constants/hseparation = 16
 columns = 9
+=======
+custom_constants/vseparation = 16
+custom_constants/hseparation = 16
+columns = 10
+>>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Item1" parent="CanvasLayer/ColorRect/Itemholder/GridContainer" instance=ExtResource( 6 )]
+<<<<<<< HEAD
 visible = false
+=======
+>>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 focus_neighbour_right = NodePath("../Item2")
 focus_neighbour_bottom = NodePath("../../../Close")
 
 [node name="Item2" parent="CanvasLayer/ColorRect/Itemholder/GridContainer" instance=ExtResource( 6 )]
+<<<<<<< HEAD
 visible = false
+=======
+>>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 margin_left = 80.0
 margin_right = 144.0
 focus_neighbour_left = NodePath("../Item1")
@@ -73,7 +93,10 @@ focus_neighbour_right = NodePath("../Item3")
 focus_neighbour_bottom = NodePath("../../../Close")
 
 [node name="Item3" parent="CanvasLayer/ColorRect/Itemholder/GridContainer" instance=ExtResource( 6 )]
+<<<<<<< HEAD
 visible = false
+=======
+>>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 margin_left = 160.0
 margin_right = 224.0
 focus_neighbour_left = NodePath("../Item2")
@@ -90,6 +113,11 @@ focus_neighbour_bottom = NodePath("../../../Close")
 
 [node name="Item5" parent="CanvasLayer/ColorRect/Itemholder/GridContainer" instance=ExtResource( 6 )]
 visible = false
+<<<<<<< HEAD
+=======
+margin_left = 320.0
+margin_right = 384.0
+>>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 focus_neighbour_left = NodePath("../Item4")
 focus_neighbour_right = NodePath("../Item6")
 focus_neighbour_bottom = NodePath("../../../Close")
@@ -112,40 +140,61 @@ focus_neighbour_bottom = NodePath("../../../Close")
 
 [node name="Item8" parent="CanvasLayer/ColorRect/Itemholder/GridContainer" instance=ExtResource( 6 )]
 visible = false
+<<<<<<< HEAD
 margin_left = 560.0
 margin_right = 624.0
+=======
+margin_left = 480.0
+margin_right = 544.0
+>>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 focus_neighbour_left = NodePath("../Item7")
 focus_neighbour_right = NodePath("../Item9")
 focus_neighbour_bottom = NodePath("../../../Close")
 
 [node name="Item9" parent="CanvasLayer/ColorRect/Itemholder/GridContainer" instance=ExtResource( 6 )]
 visible = false
+<<<<<<< HEAD
 margin_left = 640.0
 margin_right = 704.0
+=======
+margin_left = 480.0
+margin_right = 544.0
+>>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 focus_neighbour_left = NodePath("../Item8")
 focus_neighbour_right = NodePath("../Item10")
 focus_neighbour_bottom = NodePath("../../../Close")
 
 [node name="Item10" parent="CanvasLayer/ColorRect/Itemholder/GridContainer" instance=ExtResource( 6 )]
 visible = false
+<<<<<<< HEAD
 margin_top = 80.0
 margin_bottom = 144.0
+=======
+margin_left = 480.0
+margin_right = 544.0
+>>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 focus_neighbour_left = NodePath("../Item9")
 focus_neighbour_right = NodePath("../Item11")
 focus_neighbour_bottom = NodePath("../../../Close")
 
 [node name="Item11" parent="CanvasLayer/ColorRect/Itemholder/GridContainer" instance=ExtResource( 6 )]
 visible = false
+<<<<<<< HEAD
 margin_left = 80.0
 margin_top = 80.0
 margin_right = 144.0
 margin_bottom = 144.0
+=======
+margin_left = 480.0
+margin_right = 544.0
+>>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 focus_neighbour_left = NodePath("../Item10")
 focus_neighbour_right = NodePath("../Item12")
 focus_neighbour_bottom = NodePath("../../../Close")
 
 [node name="Item12" parent="CanvasLayer/ColorRect/Itemholder/GridContainer" instance=ExtResource( 6 )]
 visible = false
+<<<<<<< HEAD
 margin_left = 160.0
 margin_top = 80.0
 margin_right = 224.0
@@ -167,6 +216,13 @@ visible = false
 focus_neighbour_right = NodePath("../Item2")
 focus_neighbour_bottom = NodePath("../../../Close")
 
+=======
+margin_left = 480.0
+margin_right = 544.0
+focus_neighbour_left = NodePath("../Item11")
+focus_neighbour_bottom = NodePath("../../../Close")
+
+>>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 [node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
 margin_left = 56.0
 margin_right = 262.0
@@ -204,7 +260,11 @@ margin_top = 36.0
 margin_right = 416.0
 margin_bottom = 84.0
 rect_min_size = Vector2( 416, 48 )
+<<<<<<< HEAD
 custom_fonts/normal_font = SubResource( 2 )
+=======
+custom_fonts/normal_font = SubResource( 4 )
+>>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 bbcode_text = "
@@ -229,7 +289,11 @@ __meta__ = {
 margin_right = 416.0
 margin_bottom = 341.0
 rect_min_size = Vector2( 416, 341 )
+<<<<<<< HEAD
 custom_fonts/font = SubResource( 3 )
+=======
+custom_fonts/font = SubResource( 5 )
+>>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 
 [node name="Close" parent="CanvasLayer/ColorRect" instance=ExtResource( 5 )]

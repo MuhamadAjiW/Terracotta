@@ -50,12 +50,15 @@ func _on_Controls_button_up():
 
 
 func _on_Main_Menu_button_up():
+<<<<<<< HEAD
 	$"CanvasLayer/ColorRect/Confirm overlay".visible = true
 	$"CanvasLayer/ColorRect/Confirm overlay/No".grab_focus()
 
 func _on_Yes_button_up():
 	$"/root/Global".audio.get_node("Forest").stop()
 	$"/root/Global".audio.get_node("Theme").play()
+=======
+>>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 	get_parent().transition('res://Scenes/Main menu.tscn')
 
 func _on_No_button_up():
