@@ -30,14 +30,10 @@ margin_left = 24.0
 margin_top = 48.0
 margin_right = 72.0
 margin_bottom = 80.0
-<<<<<<< HEAD
 focus_neighbour_left = NodePath("..")
 focus_neighbour_top = NodePath("..")
 focus_neighbour_right = NodePath("..")
 focus_neighbour_bottom = NodePath("..")
-=======
-focus_neighbour_top = NodePath("..")
->>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 mouse_filter = 2
 script = ExtResource( 3 )
 __meta__ = {

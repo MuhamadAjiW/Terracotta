@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=22 format=2]
-=======
-[gd_scene load_steps=19 format=2]
->>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 
 [ext_resource path="res://Graphics/Player Sprite/Walk3.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
@@ -20,12 +16,9 @@
 [ext_resource path="res://Graphics/Player Sprite/Drop2.png" type="Texture" id=14]
 [ext_resource path="res://Graphics/Player Sprite/Idle1.png" type="Texture" id=15]
 [ext_resource path="res://Graphics/Player Sprite/Idle2.png" type="Texture" id=16]
-<<<<<<< HEAD
 [ext_resource path="res://Audio/Footsteps.wav" type="AudioStream" id=17]
 [ext_resource path="res://Audio/FootstepsQuick.wav" type="AudioStream" id=18]
 [ext_resource path="res://Audio/Jump.wav" type="AudioStream" id=19]
-=======
->>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -35,18 +28,10 @@ animations = [ {
 "speed": 1.0
 }, {
 "frames": [ ExtResource( 13 ) ],
-<<<<<<< HEAD
-=======
 "loop": false,
 "name": "interact",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 14 ) ],
->>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
-"loop": false,
-"name": "fall",
-"speed": 1.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ) ],
 "loop": false,
 "name": "jump",
@@ -57,26 +42,15 @@ animations = [ {
 "name": "fall",
 "speed": 1.0
 }, {
-<<<<<<< HEAD
-=======
-"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ) ],
-"loop": false,
-"name": "jump",
-"speed": 4.0
-}, {
->>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "walk",
 "speed": 3.0
-<<<<<<< HEAD
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "run",
 "speed": 5.0
-=======
->>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -107,7 +81,6 @@ wait_time = 0.5
 
 [node name="AnimationDelay" type="Timer" parent="."]
 wait_time = 0.1
-<<<<<<< HEAD
 
 [node name="Audio" type="Node2D" parent="."]
 
@@ -122,5 +95,3 @@ volume_db = -15.0
 [node name="Jump" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 19 )
 volume_db = -5.0
-=======
->>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00

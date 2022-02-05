@@ -9,7 +9,6 @@
 [ext_resource path="res://Graphics/tilemapping/Pixel2.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/Level 1.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=9]
-<<<<<<< HEAD
 [ext_resource path="res://Graphics/tilemapping/Pixel3.png" type="Texture" id=10]
 [ext_resource path="res://Graphics/tilemapping/Pixel4.png" type="Texture" id=11]
 [ext_resource path="res://Graphics/tilemapping/Pixel5.png" type="Texture" id=12]
@@ -500,56 +499,6 @@ points = PoolVector2Array( 64, 16, 0, 16, 0, 0, 64, 0 )
 
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 12.76, 15.36 )
-=======
-
-[sub_resource type="CanvasItemMaterial" id=1]
-light_mode = 2
-
-[sub_resource type="CanvasItemMaterial" id=2]
-light_mode = 2
-
-[sub_resource type="CanvasItemMaterial" id=3]
-light_mode = 2
-
-[sub_resource type="CanvasItemMaterial" id=4]
-light_mode = 2
-
-[sub_resource type="CanvasItemMaterial" id=5]
-light_mode = 2
-
-[sub_resource type="CanvasItemMaterial" id=6]
-light_mode = 2
-
-[sub_resource type="CanvasItemMaterial" id=7]
-light_mode = 2
-
-[sub_resource type="CanvasItemMaterial" id=8]
-light_mode = 2
-
-[sub_resource type="OccluderPolygon2D" id=9]
-polygon = PoolVector2Array( 718.059, 33.5137, 718.059, -30.4863, -657.941, -30.4863, -657.941, -374.486, 350.059, -374.486, 350.059, -438.486, -649.941, -438.486, 6.05859, -822.486, 670.059, -438.486, 486.059, -438.486, 486.059, -374.486, 654.059, -374.486, 654.059, -134.486, 718.059, -134.486, 718.059, -406.486, 974.059, -262.486, 1006.06, -310.486, 6.05859, -886.486, -993.941, -310.486, -961.941, -262.486, -713.941, -406.486, -713.941, 33.5137 )
-
-[sub_resource type="CanvasItemMaterial" id=10]
-light_mode = 2
-
-[sub_resource type="OccluderPolygon2D" id=11]
-polygon = PoolVector2Array( -656, -136, -657.941, -374.486, 350.059, -374.486, 350.059, -438.486, -649.941, -438.486, 6.05859, -822.486, 670.059, -438.486, 486.059, -438.486, 486.059, -374.486, 654.059, -374.486, 654.059, -134.486, 718.059, -134.486, 718.059, -406.486, 974.059, -262.486, 1006.06, -310.486, 6.05859, -886.486, -993.941, -310.486, -961.941, -262.486, -720, -400, -720, -136 )
-
-[sub_resource type="OccluderPolygon2D" id=12]
-polygon = PoolVector2Array( 720, -32.0001, 720, 31.9999, -720, 31.9999, -720, -32.0001 )
-
-[sub_resource type="CanvasItemMaterial" id=13]
-light_mode = 2
-
-[sub_resource type="OccluderPolygon2D" id=14]
-polygon = PoolVector2Array( 718.059, 33.514, 718.059, -30.486, -657.941, -30.486, -657.941, -374.486, 350.059, -374.486, 350.059, -438.486, -649.941, -438.486, 6.05859, -822.486, 670.059, -438.486, 486.059, -438.486, 486.059, -374.486, 654.059, -374.486, 654.059, -134.486, 718.059, -134.486, 718.059, -406.486, 974.059, -262.486, 1006.06, -310.486, 6.05859, -886.486, -993.941, -310.486, -961.941, -262.486, -720, -400, -713.941, 33.514 )
-
-[sub_resource type="CanvasItemMaterial" id=15]
-light_mode = 2
-
-[sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 60.8, 12.8 )
->>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 
 [node name="Level 1" type="Node2D"]
 pause_mode = 1
@@ -557,7 +506,6 @@ script = ExtResource( 8 )
 
 [node name="Background" type="Sprite" parent="."]
 light_mask = 2
-<<<<<<< HEAD
 position = Vector2( 920, 0 )
 texture = ExtResource( 2 )
 
@@ -565,19 +513,6 @@ texture = ExtResource( 2 )
 position = Vector2( 5112, 0 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 2 )
-=======
-material = SubResource( 1 )
-position = Vector2( 9936, 216 )
-scale = Vector2( 16.8777, 3.04913 )
-texture = ExtResource( 2 )
-
-[node name="Player" parent="." instance=ExtResource( 3 )]
-pause_mode = 1
-material = SubResource( 2 )
-position = Vector2( -153.651, 654.564 )
-
-[node name="Camera" parent="Player" instance=ExtResource( 4 )]
->>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 
 [node name="Background" type="Sprite" parent="Background"]
 light_mask = 2
@@ -591,7 +526,6 @@ texture = ExtResource( 2 )
 
 [node name="Background" type="Sprite" parent="Background/Background"]
 light_mask = 2
-<<<<<<< HEAD
 position = Vector2( 10224, 0 )
 texture = ExtResource( 2 )
 
@@ -615,30 +549,6 @@ tile_data = PoolIntArray( 524290, -1073741815, 0, 524291, -536870903, 0, 589826,
 tile_set = SubResource( 20 )
 format = 1
 tile_data = PoolIntArray( 327681, 1073741831, 0, 393217, 1073741831, 0, 458753, 1073741831, 0, 524289, 1073741831, 0, 720913, 5, 0, 720914, 3, 0 )
-=======
-material = SubResource( 3 )
-position = Vector2( 5408, 720 )
-path = "res://Scenes/Level 2.tscn"
-
-[node name="Door" parent="." instance=ExtResource( 9 )]
-material = SubResource( 4 )
-
-[node name="Door2" parent="." instance=ExtResource( 9 )]
-material = SubResource( 5 )
-position = Vector2( 3424, 640 )
-
-[node name="Door3" parent="." instance=ExtResource( 9 )]
-material = SubResource( 6 )
-position = Vector2( 4792, 640 )
-
-[node name="Door4" parent="." instance=ExtResource( 9 )]
-material = SubResource( 7 )
-position = Vector2( 17640, 640 )
-
-[node name="House" type="StaticBody2D" parent="."]
-material = SubResource( 8 )
-position = Vector2( 409.941, 726.486 )
->>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 
 [node name="Door" parent="House" instance=ExtResource( 9 )]
 position = Vector2( 1120, 640 )
@@ -673,7 +583,6 @@ position = Vector2( 18512, -8 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 
-<<<<<<< HEAD
 [node name="Interior" type="TileMap" parent="House3"]
 position = Vector2( 0.000488281, 0 )
 tile_set = SubResource( 1 )
@@ -685,14 +594,6 @@ position = Vector2( 0.000488281, 0 )
 tile_set = SubResource( 1 )
 format = 1
 tile_data = PoolIntArray( 524290, -1073741815, 0, 524291, -536870903, 0, 589826, -2147483638, 0, 589827, -1610612726, 0, 655362, -2147483638, 0, 655363, -1610612726, 0, 655367, 8, 0, 655368, 536870921, 0, 655369, 10, 0, 655370, 9, 0, 655371, 536870920, 0 )
-=======
-[node name="LightOccluder2D" type="LightOccluder2D" parent="House"]
-occluder = SubResource( 9 )
-
-[node name="House2" type="StaticBody2D" parent="."]
-material = SubResource( 10 )
-position = Vector2( 4112, 728 )
->>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 
 [node name="Additional walls" type="TileMap" parent="House3"]
 position = Vector2( 0.000488281, 0 )
@@ -725,28 +626,9 @@ position = Vector2( 5112, 0 )
 use_parent_material = true
 texture = ExtResource( 5 )
 
-<<<<<<< HEAD
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground"]
 scale = Vector2( 200, 50 )
 shape = SubResource( 21 )
-=======
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="House2"]
-polygon = PoolVector2Array( -720, -136, -713.941, -406.486, -961.941, -262.486, -993.941, -310.486, 6.05859, -886.486, 1006.06, -310.486, 974.059, -262.486, 718.059, -406.486, 718.059, -134.486, 654.059, -134.486, 654.059, -374.486, 486.059, -374.486, 486.059, -438.486, 670.059, -438.486, 6.05859, -822.486, -649.941, -438.486, 350.059, -438.486, 350.059, -374.486, -656, -376, -656, -136 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="House2"]
-polygon = PoolVector2Array( 720, -32.0001, 720, 31.9999, -720, 31.9999, -720, -32.0001 )
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="House2"]
-occluder = SubResource( 11 )
-
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="House2"]
-occluder = SubResource( 12 )
-
-[node name="House3" type="StaticBody2D" parent="."]
-material = SubResource( 13 )
-position = Vector2( 18328, 726.486 )
-scale = Vector2( -1, 1 )
->>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 
 [node name="Ground2" type="StaticBody2D" parent="Ground"]
 position = Vector2( 10224, 0 )
@@ -781,26 +663,16 @@ texture = ExtResource( 5 )
 scale = Vector2( 200, 50 )
 shape = SubResource( 21 )
 
-<<<<<<< HEAD
 [node name="Passage" parent="." instance=ExtResource( 6 )]
 position = Vector2( 12193.6, 704 )
 path = "res://Scenes/Level 3.tscn"
 
 [node name="PassageTwo" parent="." instance=ExtResource( 29 )]
-=======
-[node name="LightOccluder2D" type="LightOccluder2D" parent="House3"]
-occluder = SubResource( 14 )
-
-[node name="Ground" type="StaticBody2D" parent="."]
-material = SubResource( 15 )
-position = Vector2( 9784, 1400 )
->>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 pause_mode = 1
 position = Vector2( 8, 664 )
 
-<<<<<<< HEAD
 [node name="Camera" parent="Player" instance=ExtResource( 4 )]
 
 [node name="Basic Lighting" parent="Player" instance=ExtResource( 1 )]
@@ -810,8 +682,3 @@ visible = false
 visible = false
 position = Vector2( 608, 632 )
 script = ExtResource( 30 )
-=======
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-scale = Vector2( 200, 50 )
-shape = SubResource( 16 )
->>>>>>> 12aa47a5b834fe17869339c52eafc094b4d7ab00
